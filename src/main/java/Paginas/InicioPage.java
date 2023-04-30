@@ -44,4 +44,8 @@ public class InicioPage {
     public String obterResultado () {
         return navegador.findElement(By.xpath("//h1[@class='entry-title']")).getText();
     }
+
+    public String obterResultadoNaoEncontrado () {
+        return navegador.findElement(By.xpath("//h1[@class='entry-title']")).getText();
+    }
 }

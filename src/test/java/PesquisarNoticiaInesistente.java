@@ -5,9 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+public class PesquisarNoticiaInesistente {
 
-public class PesquisarNotificiaComDadosEspecificos {
 
     private WebDriver navegador;
 
@@ -38,14 +37,13 @@ public class PesquisarNotificiaComDadosEspecificos {
 
 
     @Test
-    @DisplayName("Pesquisar Noticia com dados especificos")
-    public void testPesquisarComDadosEspecificos() {
+    @DisplayName("Pesquisar Noticia inesistente")
+    public void testPesquisarNoticiaInesistente() {
         String resultado = new InicioPage(navegador)
                 .clicarBotaoLupaPesquisa()
-                .preencherPesquisa("Volume de transações via Pix cresceu mais de 30 vezes em dois anos no Agibank")
+                .preencherPesquisa("Yanka Ramos")
                 .clicarBotaoPesquisar()
-                .clicarNaNoticia()
-                .obterResultado();
-      Assertions.assertEquals("Volume de transações via Pix cresceu mais de 30 vezes em dois anos no Agibank", resultado);
+                .obterResultadoNaoEncontrado();
+        Assertions.assertEquals("Nenhum resultado", resultado);
     }
-    }
+}
