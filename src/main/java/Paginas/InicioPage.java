@@ -15,6 +15,7 @@ public class InicioPage {
         JavascriptExecutor jse = (JavascriptExecutor) navegador;
         jse.executeScript("window.scrollBy(0,300)");
         Thread.sleep(1000);
+        navegador.quit();
     }
 
     public InicioPage clicarBotaoLupaPesquisa() {
